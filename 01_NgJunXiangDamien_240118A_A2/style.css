@@ -1,0 +1,594 @@
+@font-face {
+    font-family: 'dryBrush';
+    src: url('fonts/Dry\ Brush.woff');
+    font-weight: 600;
+    /*for some reason font-weight:normal makes the font look blurry and bolded
+	https://stackoverflow.com/questions/14222520/webfont-from-fonts-com-are-appearing-too-thick */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lexend';
+    src: url('fonts/Lexend-VariableFont_wght.ttf');
+    font-weight: 600;
+    /*for some reason font-weight:normal makes the font look blurry and bolded
+	https://stackoverflow.com/questions/14222520/webfont-from-fonts-com-are-appearing-too-thick */
+    font-style: oblique;
+}
+
+html {}
+
+body {
+    background-color: #216A2B;
+    color: white;
+    display: flex;
+    margin: 0;
+    font-family: 'dryBrush', serif;
+    flex-flow: column wrap;
+}
+
+/* Base element styling*/
+header {
+    background-color: #084C12;
+    position: relative;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+main {
+    font-family: 'lexend', serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section {
+    position: relative;
+    scroll-margin-top: 60px;
+}
+
+img {
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+.page {
+    width: 80vw;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.page h2 {
+    flex: 100%;
+}
+
+.page p {
+    flex: 2;
+    min-width: 150px;
+}
+
+nav {
+    background-color: #084C12;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 5px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+#hamIcon {
+    display: none;
+}
+
+.menuShow ul {
+    /*to unhide menu items*/
+    display: block;
+}
+
+.menuShow #hamIcon span {
+    transform: rotate(45deg);
+}
+
+.menuShow #hamIcon span::before {
+    top: 0;
+    transform: rotate(0deg)
+}
+
+.menuShow #hamIcon span::after {
+    top: -2px;
+    transform: rotate(90deg);
+}
+
+nav div {
+    display: none;
+}
+
+.headerParallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.headerParallax img {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#headerBg {
+    top: 0px;
+    object-position: top;
+}
+
+.headerParallax h1 {
+    position: relative;
+    margin: 0px;
+    font-size: 8em;
+    z-index: 1;
+    text-align: center;
+    line-height: 1.3em;
+    top: 100px;
+    text-shadow: 5px 5px 0 black;
+}
+
+.headerParallax::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    z-index: 2;
+    width: 100%;
+    height: 25%;
+    background-image: linear-gradient(to top, #084C12, transparent);
+}
+
+nav ul li button {
+    padding: 5px;
+    font-family: 'lexend', serif;
+    background-color: transparent;
+    border: none;
+    color: #198B2A;
+    text-align: center;
+    font-size: 1.5em;
+}
+button {
+    padding: 3px;
+    margin: 3px;
+}
+button:hover,
+button:active {
+    color: white;
+    background-image: linear-gradient(to right, #216A2B, transparent);
+}
+
+a {
+    transition-duration: 0.25s;
+    text-decoration: none;
+    color: #053a0d;
+    padding: 3px;
+}
+
+a:hover,
+a:active {
+    color: white;
+    background-color: #053a0d;
+}
+
+.flexBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.flexItem {
+    flex: 1;
+    padding: 5px;
+    min-width: 300px;
+}
+
+.vidContainer {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    min-width: 200px;
+    padding-top: calc(9/16*100%);
+}
+
+.shortsContainer {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    min-width: 200px;
+    padding-top: calc(16/9*100%);
+}
+
+.responsive {
+    max-width: 100%;
+    min-width: 150px;
+}
+
+.responsiveiframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mushroomGame {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    background-color: gray;
+    box-sizing: border-box;
+}
+
+#mushGameCover {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    opacity: 30%;
+}
+
+.mushroomGame button {
+    position: relative;
+    align-self: center;
+    z-index: 2;
+}
+
+#mushGameCover+div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #000;
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 5px;
+}
+
+#mushGameCover+div p,
+#mushGameCover+div h2 {
+    margin: 5px;
+}
+
+#mushGameCover+div img {
+    max-height: 300px;
+    display: none;
+}
+
+#mushGameArea {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 8px 0px;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#mushGameArea div {
+    height: 100%;
+    width: 100%;
+    border: 12px solid black;
+    margin: 8px;
+    background-image: url('images/puffball.jpg');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#mushGameArea div:hover,
+#mushGameArea div:active {
+    border: 12px solid yellow;
+}
+
+#mushScore {
+    margin: 3px;
+    flex: 2;
+}
+
+.fishingGame {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.fishingGame img {
+    position: absolute;
+    width: 100%;
+}
+
+#fishGameArea {
+    image-rendering: pixelated;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-image: url("images/fishlandscape.webp");
+    background-size: cover;
+}
+
+#fishGameArea canvas {
+    image-rendering: pixelated;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#fishGameTop{
+    z-index: 1;
+    pointer-events: none;
+}
+#fishesAll {
+    position: relative;
+    overflow: hidden;
+}
+#fishGameUI{
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, #149BE7, transparent);
+    text-shadow: 3px 3px 0 black;
+    text-align: center;
+}
+#fishGameScore{
+    text-align: left;
+    font-size: 1.5em;
+}
+#fishSpawnRange input{
+    cursor: pointer;
+}
+.bubblePosition1 {
+    bottom: 20%;
+    left: 20%;
+}
+
+.bubblePosition2 {
+    bottom: 15%;
+    right: 20%;
+}
+
+.bubblePosition3 {
+    bottom: 7%;
+    right: 32%;
+    animation-duration: 1s;
+}
+
+/*https://pagecrafter.com/responsive-background-image-sprites-css-tutorial/
+Incredible resource on responsive sprites*/
+.bubblesSprite {
+    display: block;
+    image-rendering: pixelated;
+    position: absolute;
+    background-image: url('images/bubbles.webp');
+    width: 5%;
+    height: 0;
+    padding-bottom: 5%;
+    background-size: 500%;
+    animation: bubblesAnimation 0.5s steps(5, jump-none) infinite;
+}
+
+.fishSprite {
+    image-rendering: pixelated;
+    position: absolute;
+    background-image: url('images/fish.png');
+    width: 8%;
+    height: 0;
+    padding-bottom: 3.66%;
+    background-size: 900%;
+    animation: fishAnimation 0.5s steps(9, jump-none) infinite;
+    overflow: hidden;
+    top: 55%;
+}
+
+@keyframes swimRight {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 120%;
+    }
+
+}
+
+@keyframes swimLeft {
+    0% {
+        right: -100%;
+    }
+
+    100% {
+        right: 120%;
+    }
+
+}
+
+@keyframes bubblesAnimation {
+    from {
+        background-position: 0% 0px;
+    }
+
+    to {
+        background-position: 100% 0px;
+    }
+}
+
+@keyframes fishAnimation {
+    from {
+        background-position: 0% 0px;
+    }
+
+    to {
+        background-position: 100% 0px;
+    }
+}
+
+.slideIn {
+    animation-name: slide-in;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.4s;
+}
+
+.slideOut {
+    animation-name: slide-out;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+}
+
+@keyframes slide-in {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        right: -100%;
+    }
+}
+
+@media (max-width:800px) {
+
+    .headerParallax h1 {
+        font-size: 4em;
+    }
+
+    .page {
+        width: 95vw;
+    }
+
+    nav {
+        font-family: 'lexend', serif;
+        width: auto;
+        display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 5px;
+    }
+
+    nav div {
+        display: inline-block;
+        padding: 5px;
+    }
+
+    nav ul li {
+        /*make menu items vertical*/
+        display: block;
+    }
+
+    #hamIcon {
+        /* unhide menu icon */
+        background-color: transparent;
+        display: inline-block;
+        position: sticky;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 1;
+        border: none;
+        padding: 2px;
+    }
+
+    /* creating the hamburger icon*/
+    /* drawing the lines of the burger*/
+    #hamIcon>span,
+    #hamIcon>span::before,
+    #hamIcon>span::after {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: #F3F3F3;
+        transition-duration: 0.25s;
+    }
+
+    /*moving a line up and down*/
+    #hamIcon>span::before {
+        content: '';
+        bottom: 7px;
+    }
+
+    #hamIcon>span::after {
+        content: '';
+        top: 5px;
+    }
+
+
+    /*positioning hamburger menu (-100% left to default hide it)*/
+    nav ul {
+        display: block;
+        position: absolute;
+        top: 40px;
+        left: -100%;
+        width: 20vw;
+        min-width: 160px;
+        height: auto;
+        background-color: #084C12;
+        transition-duration: 0.25s;
+        align-content: normal;
+        border: 2px solid #216A2B;
+    }
+
+    .mushroomGame {
+        height: 95vh;
+    }
+
+    #mushGameArea {
+        flex-direction: column;
+        padding: 0px 8px;
+    }
+
+}

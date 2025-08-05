@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Improvise. Adapt. Overcome.</title>
+    <meta charset="UTF-8">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="headerParallax">
+            <img id="headerBg" src="images/headerBg.jpg" alt="Image of trees and a skyline">
+            <img id="bearGrylls" src="images/beargrylls_nobg.webp" alt="Image of Bear Grylls Meme"
+                title="Improvise. Adapt. Overcome.">
+            <h1 id="headerText">Surviving In The Wild</h1>
+            <img src="images/foreground_bushes.webp" alt="Image of bushes">
+        </div>
+    </header>
+    <nav> <!--menu system-->
+        <button id="hamIcon"><span id="hamLines"> </span></button>
+        <div>asdasdasdas</div>
+        <ul>
+            <li><button id="page1btn">Home</button></li>
+            <li><button id="page2btn">Foraging</button></li>
+            <li><button id="page3btn">Fishing</button></li>
+        </ul>
+    </nav>
+    <main id="pageContainer">
+        <section class="page" id="page1">
+            <h1>
+                Surviving in the wild is difficult.
+            </h1>
+            <p>
+                Hopefully you haven't just survived something horrendous and are now stranded on some strange island
+                with nothing
+                but the clothes on your back.
+            </p>
+            <p>
+                But you're in luck! <br> You've somehow stumbled onto my humble site despite the fact that you
+                shouldn't have any internet, and now I shall regale you with the knowledge that I have which
+                <i>could</i> save your life!
+            </p>
+            <p>
+                However, in truth I only have knowledge on how to obtain food fit for human consumption...
+            </p>
+            <p>
+                So, if you need information on the other aspects of survival there are many other sources out there:
+            </p>
+            <a href="https://www.redcross.org/take-a-class/resources/articles/11-survival-skills-to-know"
+                target="_blank">11 Survival skills to know by the Red Cross!</a>
+            <br>
+            <a href="https://nature-mentor.com/how-to-survive-in-the-wild-with-nothing/" target="_blank">How To Survive
+                In The Wild With Nothing...</a>
+            <p>There are also tons of videos on youtube that delve into bushcraft for tools and shelters that are both
+                informative and a fun watch!</p>
+            <div class="flexBox">
+                <div class="flexItem">
+                    <div class="shortsContainer">
+                        <iframe class="responsiveiframe"
+                            src="https://www.youtube.com/embed/KYLYqBnRXwI?si=2btMgCB3kBCwP2iF"></iframe>
+                    </div>
+                </div>
+                <div class="flexItem">
+                    <div class="shortsContainer">
+                        <iframe class="responsiveiframe"
+                            src="https://www.youtube.com/embed/o_WOXFA9yRc?si=afUnOiW6bFyeccZi"></iframe>
+                    </div>
+                </div>
+                <div class="flexItem">
+                    <div class="vidContainer">
+                        <iframe class="responsiveiframe"
+                            src="https://www.youtube.com/embed/iys_pmJSp9M?si=7VREGnmN4XgiKwiZ"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page" id="page2">
+            <h1>
+                Foraging
+            </h1>
+            <p>
+                Foraging is one of the most basic ways to get edible food while in the wild. Foraging involves
+                identifying and harvesting wild edibles while avoiding the poisonous ones. Wild edibles could be
+                anything from berries to mushrooms to even flowers!
+            </p>
+            <article class="flexBox">
+                <h2>
+                    Common Wild Edibles
+                </h2>
+                <p>
+                    Cattails are common and easy to harvest, but they also have a poisonous look-alike, the Iris
+                    plant.<br>The Iris is flat at the base and makes a fan shape where all the leave meet the ground,
+                    while edible Cattails have a central vein called a midrib around which its leaves form.<br>Here's a
+                    video showing more common and useful Wild Edibles for survival!
+                </p>
+                <div class="flexItem">
+                    <div class="shortsContainer">
+                        <iframe class="responsiveiframe"
+                            src="https://www.youtube.com/embed/k0reIYCuLSQ?si=7MTUYMz2RCqxBrvy"></iframe>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h1>
+                    Mushroom picking game
+                </h1>
+                <p>Try to guess which mushroom is edible!</p>
+                <div class="mushroomGame">
+                    <div id="mushScore">&#11036;&#11036;&#11036;&#11036;&#11036;</div>
+                    <div id="mushGameArea">
+                        <div id="mushOption_1">
+                            <!-- <h3>Mushroom 1</h3> -->
+                        </div>
+                        <div id="mushOption_2">
+                            <!-- <h3>Mushroom 2</h3> -->
+                        </div>
+                    </div>
+                    <div id="mushGameCover"> </div>
+                    <div>
+                        <h2>Guess which shroom is edible!</h2>
+                        <p>Pick between 2 mushrooms and find out which you should consume and which would presume you
+                            dead!</p>
+                        <img class="responsive">
+                        <button>Start Game!</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="page" id="page3">
+            <h1>
+                Fishing
+            </h1>
+            <article>
+                <h2>
+                    Finding a suitable fishing spot
+                </h2>
+            </article>
+            <article>
+                <h2>
+                    Making a Makeshift Rod
+                </h2>
+            </article>
+            <article>
+                <h1>
+                    Fishing Minigame
+                </h1>
+                <p>Try to catch as many fish as you can</p>
+                <div id="fishGameUI">
+                    <span id="fishGameScore">Fish Caught: 0</span>
+                    <div id="fishSpawnRange">
+                        Fish Density<br>
+                        <input type="range"min="250" max="2250" value="1250"></input>
+                    </div>
+                </div>
+                <div class="fishingGame">
+                    <div id="fishGameArea">
+                        <canvas></canvas>
+                        <img src="images/minigrylls.webp">
+                        <img id="fishGameTop" src="images/overwater.webp">
+                        <div id="bubblesAll">
+                            <div class="bubblesSprite bubblePosition1"></div>
+                            <div class="bubblesSprite bubblePosition2"></div>
+                            <div class="bubblesSprite bubblePosition3"></div>
+                        </div>
+                        <div id="fishesAll">
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
