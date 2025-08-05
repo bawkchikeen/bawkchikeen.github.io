@@ -246,9 +246,11 @@ var haveFish = 0;
 var x = 0;
 var y = 0;
 var caughtFish;
-fishAll.addEventListener("mousemove", function (event) {
+fishAll.addEventListener("pointermove", function (event) {
     fishCanvasContext.clearRect(0, 0, fishCanvas.width, fishCanvas.height);
-
+    if (event.target.hasPointerCapture(event.pointerId)) {//Nearly lost my mind trying to make this work
+        event.target.releasePointerCapture(event.pointerId);//This works by constantly recapturing what the pointer is on so it is probably quite intensive... but it works!
+    }
     if (event.target.id.split('_')[0] != 'fishID') {
         x = event.offsetX / fishCanvas.offsetWidth * 200;
         y = event.offsetY / fishCanvas.offsetHeight * 150;
@@ -266,7 +268,6 @@ fishAll.addEventListener("mousemove", function (event) {
         caughtFish.id = 'caughtFish';
         caughtFish.classList.add('fishSprite');
         caughtFish.style.transform = "rotate(-90deg) translate(-50%, -110%)";
-        caughtFish.style.pointerEvents = "none";
         fishAll.appendChild(caughtFish);
     }
     else if (event.target.id.split('_')[0] != 'fishID' && haveFish == 1) {
@@ -275,7 +276,7 @@ fishAll.addEventListener("mousemove", function (event) {
     }
 })
 var fishScore = 0;
-fishAll.addEventListener("mousedown", function (event) {
+fishAll.addEventListener("pointerup", function (event) {
     console.debug(event.offsetY);
     if (haveFish == 1 && event.offsetY <= fishesAll.offsetHeight / 2.25) {
         splashSound.currentTime = 0;
@@ -327,7 +328,7 @@ function cullFish() {
     fishAll.replaceChildren();
 }
 var fishSpawner = setInterval(function () {
-    if (currentpage.id == "page3")
+    if (currentpage.id == "page3" && document.hasFocus())
         spawnFish()
 }, spawnRate);
 
@@ -336,4 +337,32 @@ function resetFish() {
     haveFish = 0;
     fishScore = 0;
     fishScoreText.innerHTML = "Fish Caught: 0"
+}
+
+const btnFS = document.querySelector('#btnFS');
+const btnWS = document.querySelector('#btnWS');
+
+btnFS.addEventListener("click", enterFS);
+btnWS.addEventListener("click", exitFS);
+function enterFS() {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+        document.documentElement.msRequestFullscreen();
+    }
+}
+function exitFS() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+    }
 }
