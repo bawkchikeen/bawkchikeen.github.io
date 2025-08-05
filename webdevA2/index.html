@@ -5,8 +5,11 @@
     <title>Improvise. Adapt. Overcome.</title>
     <meta charset="UTF-8">
     <link href="style.css" type="text/css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=no">
     <script src="main.js" defer></script>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="images/beargrylls_nobg.webp">
 </head>
 
 <body>
@@ -41,7 +44,7 @@
             <p>
                 But you're in luck! <br> You've somehow stumbled onto my humble site despite the fact that you
                 shouldn't have any internet, and now I shall regale you with the knowledge that I have which
-                <i>could</i> save your life!
+                could save your life!
             </p>
             <p>
                 However, in truth I only have knowledge on how to obtain food fit for human consumption...
@@ -57,19 +60,19 @@
             <p>There are also tons of videos on youtube that delve into bushcraft for tools and shelters that are both
                 informative and a fun watch!</p>
             <div class="flexBox">
-                <div class="flexItem">
+                <div class="flexItemShrink">
                     <div class="shortsContainer">
                         <iframe class="responsiveiframe"
                             src="https://www.youtube.com/embed/KYLYqBnRXwI?si=2btMgCB3kBCwP2iF"></iframe>
                     </div>
                 </div>
-                <div class="flexItem">
+                <div class="flexItemShrink">
                     <div class="shortsContainer">
                         <iframe class="responsiveiframe"
                             src="https://www.youtube.com/embed/o_WOXFA9yRc?si=afUnOiW6bFyeccZi"></iframe>
                     </div>
                 </div>
-                <div class="flexItem">
+                <div class="flexItemGrow">
                     <div class="vidContainer">
                         <iframe class="responsiveiframe"
                             src="https://www.youtube.com/embed/iys_pmJSp9M?si=7VREGnmN4XgiKwiZ"></iframe>
@@ -90,13 +93,20 @@
                 <h2>
                     Common Wild Edibles
                 </h2>
+                <div class="flexItem">
                 <p>
                     Cattails are common and easy to harvest, but they also have a poisonous look-alike, the Iris
                     plant.<br>The Iris is flat at the base and makes a fan shape where all the leave meet the ground,
                     while edible Cattails have a central vein called a midrib around which its leaves form.<br>Here's a
                     video showing more common and useful Wild Edibles for survival!
                 </p>
-                <div class="flexItem">
+                <p>
+                    Another common plant that is edible is the Dandelion! Even though they're fairly common, I was
+                    personally surprised that this humble flower is actually something many people use to make salads
+                    with!
+                </p>
+                </div>
+                <div class="flexItemShrink">
                     <div class="shortsContainer">
                         <iframe class="responsiveiframe"
                             src="https://www.youtube.com/embed/k0reIYCuLSQ?si=7MTUYMz2RCqxBrvy"></iframe>
@@ -111,12 +121,8 @@
                 <div class="mushroomGame">
                     <div id="mushScore">&#11036;&#11036;&#11036;&#11036;&#11036;</div>
                     <div id="mushGameArea">
-                        <div id="mushOption_1">
-                            <!-- <h3>Mushroom 1</h3> -->
-                        </div>
-                        <div id="mushOption_2">
-                            <!-- <h3>Mushroom 2</h3> -->
-                        </div>
+                        <div id="mushOption_1"></div>
+                        <div id="mushOption_2"></div>
                     </div>
                     <div id="mushGameCover"> </div>
                     <div>
@@ -133,26 +139,54 @@
             <h1>
                 Fishing
             </h1>
-            <article>
+            <p>
+                Fishing comes in many forms, not just the typical fishing rod and hook! Although we'll be doing that
+                later, I was thinking we should look at one other forms of 'fishing'!
+            </p>
+            <article class="flexBox">
                 <h2>
-                    Finding a suitable fishing spot
+                    Trapping!
                 </h2>
+                <p>
+                    With just the concept of baiting and funnelling, you can create really simple traps to catch fish! A
+                    really simple one to keep in mind is to use plastic bottles, big or small both work. Simply cut then
+                    fold in the top of a bottle to create a funnel, then put bait in it. Bait doesn't have to be anyhing
+                    fancy! Whatever you have leftover is usually good enough :D
+                </p>
+                <div class="flexItemShrink">
+                    <div class="shortsContainer">
+                        <iframe class="responsiveiframe"
+                            src="https://www.youtube.com/embed/EX-kcBKvMCM?si=uAn9_Zngwz16kChH"></iframe>
+                    </div>
+                </div>
             </article>
-            <article>
+            <article class="flexBox">
                 <h2>
                     Making a Makeshift Rod
                 </h2>
+                <div class="flexItemShrink">
+                    <div class="shortsContainer">
+                        <iframe class="responsiveiframe"
+                            src="https://www.youtube.com/embed/-Hh2ZRCbNiA?si=rpBHIFobsqvTZTwc"></iframe>
+                    </div>
+                </div>
+                <p>
+                    As shown in the video, there are many useful materials out there in the wild for us to take
+                    advantage of, we simply need the know how! Dry grass is also a viable material for creating rope, as
+                    long as you can get long strands of some kind of fibre, you could probably create a rudimentary but
+                    useful fishing rod!
+                </p>
             </article>
             <article>
                 <h1>
-                    Fishing Minigame
+                    Fishing Minigame!
                 </h1>
-                <p>Try to catch as many fish as you can</p>
+                <p>Catch as many fish as you can! theres no time limit so no rush~</p>
                 <div id="fishGameUI">
                     <span id="fishGameScore">Fish Caught: 0</span>
                     <div id="fishSpawnRange">
                         Fish Density<br>
-                        <input type="range"min="250" max="2250" value="1250"></input>
+                        <input type="range" min="250" max="2250" value="1250"></input>
                     </div>
                 </div>
                 <div class="fishingGame">
@@ -172,6 +206,11 @@
             </article>
         </section>
     </main>
+    <footer>
+        <img id="qrCodeImg" src="images/qr.png">
+        <button id="btnFS">FullScreen</button>
+        <button id="btnWS">Windowed</button>
+    </footer>
 </body>
 
 </html>
